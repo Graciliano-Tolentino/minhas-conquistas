@@ -1,0 +1,135 @@
+<!--
+  =========================================================================================
+  📄 Arquivo: index.html
+  🎓 Projeto: Minha Lista de Tarefas – Trabalho Acadêmico
+  👨‍🎓 Aluno: Graciliano Augusto Nobre Tolentino
+  🏫 Curso: Desenvolvimento de Software Multiplataforma – 1º Período | FATEC Cotia
+  👨‍🏫 Professora: Semirames Pereira das Flores
+  📅 Data: 10/05/2025
+  📚 Descrição: Página web para gerenciamento de tarefas com marcação de conclusão,
+                filtros por status, progresso visual, ações utilitárias e total
+                responsividade. Desenvolvida com padrão high tech, modularidade e
+                foco em usabilidade, escalabilidade e acessibilidade.
+  =========================================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- 🔍 SEO e identificação da aplicação -->
+  <meta name="description" content="Aplicação de tarefas desenvolvida como projeto acadêmico da FATEC Cotia, com foco em produtividade e boas práticas." />
+  <meta name="theme-color" content="#B50926" />
+
+  <!-- 💡 Título da página -->
+  <title>Minhas Conquistas DSM</title>
+
+  <!-- 🖋️ Fontes e estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- 📱 PWA Manifesto -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- ⚙️ Script principal -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="container" role="main">
+
+    <!-- ====== TÍTULO E CONTEXTO ====== -->
+    <header>
+      <h1 id="tituloPrincipal">Minhas Conquistas DSM</h1>
+      <h2 class="subtitulo-visivel">Organize. Conclua. Evolua.</h2>
+    </header>
+    <!-- ====== FORMULÁRIO DE ADIÇÃO DE TAREFA ====== -->
+    <section role="form" aria-labelledby="tituloFormulario">
+      <h2 id="tituloFormulario" class="sr-only">Adicionar nova tarefa</h2>
+      
+      <div class="input-area">
+        <label for="tarefaInput" class="sr-only">Digite o nome da tarefa</label>
+        <input
+          type="text"
+          id="tarefaInput"
+          data-testid="input-tarefa"
+          placeholder="O que você precisa fazer hoje?"
+          aria-label="Campo para digitar nova tarefa"
+        />
+        <button
+          id="adicionarBtn"
+          data-testid="botao-adicionar"
+          aria-label="Adicionar tarefa"
+        >
+          <span aria-hidden="true">＋</span> Adicionar
+        </button>
+      </div>
+    </section>
+
+    <!-- ====== FILTROS DE TAREFAS ====== -->
+    <section class="filtros-tarefas" aria-label="Filtrar tarefas por status">
+      <div class="filtros-botoes">
+        <button class="filtro-btn" data-filtro="todas" aria-label="Mostrar todas as tarefas">Todos</button>
+        <button class="filtro-btn" data-filtro="pendentes" aria-label="Mostrar apenas tarefas pendentes">Pendentes</button>
+        <button class="filtro-btn" data-filtro="concluidas" aria-label="Mostrar apenas tarefas concluídas">Concluídas</button>
+      </div>
+    </section>
+    <!-- ====== LISTA DE TAREFAS ====== -->
+    <section aria-labelledby="tituloLista">
+      <h2 id="tituloLista" class="sr-only">Lista de tarefas</h2>
+      <ul
+        id="listaTarefas"
+        class="tarefas-lista"
+        data-testid="lista-tarefas"
+        aria-live="polite"
+      >
+        <!-- Tarefas serão inseridas dinamicamente via JavaScript -->
+      </ul>
+    </section>
+
+    <!-- ====== INDICADOR DE PROGRESSO ====== -->
+    <section class="progresso-tarefas" aria-label="Progresso das tarefas">
+      <p id="indicadorProgresso" class="progresso-texto">
+        📊 Progresso: <span id="progressoAtual">0</span> de <span id="progressoTotal">0</span> tarefas concluídas
+      </p>
+      <div class="barra-container">
+        <div id="barraProgresso" class="barra-progresso" style="width: 0%;"></div>
+      </div>
+    </section>
+    <!-- ====== AÇÕES ADICIONAIS SOBRE A LISTA DE TAREFAS ====== -->
+    <section class="acoes-tarefas" aria-label="Ações sobre as tarefas listadas">
+      <div class="acoes-botoes">
+        <button id="limparConcluidasBtn" aria-label="Remover todas as tarefas concluídas">
+          🗑️ Limpar Concluídas
+        </button>
+        <button id="exportarPdfBtn" aria-label="Exportar lista de tarefas como PDF">
+          📄 Exportar PDF
+        </button>
+        <button id="backupBtn" aria-label="Fazer backup da lista de tarefas">
+          ☁️ Backup
+        </button>
+      </div>
+    </section>
+
+    <!-- ====== RODAPÉ VISUAL E INSTITUCIONAL ====== -->
+    <footer class="rodape">
+      <p>Desenvolvido na FATEC Cotia com sabedoria, força e beleza.</p>
+      <p>Projeto Acadêmico de Graciliano Tolentino – Maio 2025</p>
+    </footer>
+  </main>
+</body>
+</html>
+
+<!--
+  =========================================================================================
+  🔚 Fim do Documento HTML – index.html
+
+  ✅ Estrutura finalizada com modularidade, responsividade e acessibilidade.
+  ✅ Pronto para receber lógica funcional via script.js.
+  ✅ Padrão técnico condizente com entregas de excelência para a FATEC Cotia.
+
+  🔰 Aluno: Graciliano Augusto Nobre Tolentino | Curso: DSM 1º ciclo – FATEC Cotia
+  =========================================================================================
+-->
